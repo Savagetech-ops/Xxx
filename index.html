@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>P.A.I.D Online Store</title>
+<style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: black;
+      color: gold;
+      overflow-x: hidden;
+    }
+    .loading-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background: #000;
+      color: gold;
+      font-size: 1.5em;
+      animation: fadeOut 1s ease 2.5s forwards;
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+    .dashboard {
+      position: sticky;
+      top: 0;
+      background: black;
+      color: gold;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      display: none;
+      z-index: 999;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+    .product {
+      background: #111;
+      padding: 10px;
+      border: 1px solid gold;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .sticky-icons {
+      position: fixed;
+      right: 10px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .sticky-icons img {
+      width: 50px;
+      height: 50px;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+<div class="loading-screen">
+<h1>Welcome to P.A.I.D Online Store</h1>
+<p>"Where Smart Hustle Meets Premium Deals."</p>
+</div>
+<div class="dashboard">P.A.I.D Dashboard</div>
+<div class="product-grid" id="products">
+<div class="product" onclick="location.href='buy.html'">
+<img alt="Buy" src="placeholder.jpg"/>
+<p><strong>Buy Products</strong></p>
+</div>
+<div class="product" onclick="location.href='sell.html'">
+<img alt="Sell" src="placeholder.jpg"/>
+<p><strong>Sell Products</strong></p>
+</div>
+</div>
+<div class="sticky-icons">
+<img alt="WhatsApp" src="whatsapp.png"/>
+<img alt="Cart" src="cart.png"/>
+</div>
+<script>
+    window.addEventListener("load", function () {
+      setTimeout(() => {
+        document.querySelector(".dashboard").style.display = "block";
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
